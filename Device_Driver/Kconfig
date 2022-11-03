@@ -1,0 +1,22 @@
+#
+# Touchscreen driver configuration
+#
+menuconfig INPUT_TOUCHSCREEN
+	bool "Touchscreens"
+	help
+	  Say Y here, and a list of supported touchscreens will be displayed.
+	  This option doesn't affect the kernel.
+
+	  If unsure, say Y.
+
+if INPUT_TOUCHSCREEN
+
+config TOUCHSCREEN_SPD2010_DEVICE
+	tristate "SPD2010 Multitouch Touchscreen Interface"
+	depends on I2C
+	default y
+	help
+	  say Y here if you want support for SPD2010 touch controllers.
+
+endif
+
